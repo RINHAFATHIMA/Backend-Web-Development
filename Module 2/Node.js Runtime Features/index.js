@@ -28,12 +28,8 @@ function streamFile() {
   });
 }
 
-/*
-PART 3:
-fs.readFile loads the whole file into memory at once, so memory usage grows
-with the file size. A stream moves the file in chunks, so peak memory stays
-roughly flat even when the file is very large.
-*/
+// Streams are better for large files because they process data in chunks,
+// keeping peak memory usage low instead of loading the entire file at once.
 
 readWholeFile();
 streamFile();
